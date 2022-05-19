@@ -10,18 +10,22 @@ public class Rotation : MonoBehaviour
      public float Speed;
      float WPradius = 1;
      bool alive = true;
+    
      void OnCollisionEnter(Collision collision)
         {
             if(alive == true)
                 {
+
                      transform.Rotate(new Vector3(0, 0, 90));
-                     alive = false;  
+                     alive = false;
+                     Puntuacion.score_ += 1;
+                     Debug.Log ("Tienes : " + Puntuacion.score_ + " punto(s)");
                 }      
         }
 
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
