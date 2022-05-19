@@ -19,7 +19,7 @@ public class Rotation : MonoBehaviour
                      transform.Rotate(new Vector3(0, 0, 90));
                      alive = false;
                      Puntuacion.score_ += 1;
-                     Debug.Log ("Tienes : " + Puntuacion.score_ + " punto(s)");
+                     Debug.Log ("<color=green>Tienes : " + Puntuacion.score_ + " punto(s)</color>");
                 }      
         }
 

@@ -8,6 +8,8 @@ public class GunMovement : MonoBehaviour
     public GameObject cannon;
     public GameObject shoot;
     Quaternion rotation = Quaternion.Euler(90, 0, 0);
+    bool ammo = true;
+
     
     void Start()
     {
@@ -32,9 +34,19 @@ public class GunMovement : MonoBehaviour
             }
         }
         
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-                Instantiate(shoot, position, rotation);  
-        }
+             if (ammo == true)
+            {
+                    if(Input.GetKeyDown(KeyCode.Space))
+                     {
+                        Instantiate(shoot, position, rotation);
+                        Puntuacion.ammo -= 1;
+                        Debug.Log ("<color=red>Te quedan: " +Puntuacion.ammo +" balas</color>");
+                     }
+                 if(Puntuacion.ammo == 0)
+            {
+                 Debug.Log ("<color=red>No te queda municion</color>");
+                 ammo = false;
+            }
+            }
     }
 }
